@@ -144,6 +144,9 @@ class Greeter(Prosthetic):
             if self.should_post(state):
                 location = self.get_location()
                 self.maybe_greet_others(state, location)
+                result = "Ran greeter logic"
+            else:
+                result = "Shouldn't post, so didn't"
         except NoLocationFoundException, e:
             logging.info("No location found")
             logging.info(str(e))
